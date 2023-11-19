@@ -10,12 +10,18 @@ def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
     datadatereg = re.compile(r'data-date="(.*?)" data-level')
-    # 针对2023-07-15更新了正则，并按字典序排序 https://github.com/Zfour/python_github_calendar_api/pull/15
-    datacountreg = re.compile(r'<span class="sr-only">(.*?) contribution')
+
+    # 针对2023-11-19更新了正则，并按字典序排序 https://github.com/Zfour/python_github_calendar_api/issues/18
+    datacountreg = re.compile(r'<tool-tip .*?class="sr-only position-absolute">(.*?) contributions')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
     datacount = list(map(int, [0 if i == "No" else i for i in datacount]))
 
+    # 检查datadate和datacount是否为空
+    if not datadate or not datacount:
+        # 处理空数据情况
+        return {"total": 0, "contributions": []}
+        
     # 将datadate和datacount按照字典序排序
     sorted_data = sorted(zip(datadate, datacount))
     datadate, datacount = zip(*sorted_data)
