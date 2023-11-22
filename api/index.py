@@ -12,7 +12,7 @@ def getdata(name):
     datadatereg = re.compile(r'data-date="(.*?)" data-level')
 
     # 针对2023-11-19更新了正则，并按字典序排序 https://github.com/Zfour/python_github_calendar_api/issues/18
-    datacountreg = re.compile(r'<tool-tip .*?class="sr-only position-absolute">(.*?) contributions')
+    datacountreg = re.compile(r'<tool-tip .*?class="sr-only position-absolute">(.*?) contribution')
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
     datacount = list(map(int, [0 if i == "No" else i for i in datacount]))
