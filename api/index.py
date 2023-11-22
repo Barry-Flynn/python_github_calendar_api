@@ -9,10 +9,11 @@ def list_split(items, n):
 def getdata(name):
     gitpage = requests.get("https://github.com/" + name)
     data = gitpage.text
-    datadatereg = re.compile(r'data-date="(.*?)" data-level')
-
-    # 针对2023-11-19更新了正则，并按字典序排序 https://github.com/Zfour/python_github_calendar_api/issues/18
+    
+    # 2023-11-22 更新正则 https://github.com/Zfour/python_github_calendar_api/issues/18
+    datadatereg = re.compile(r'data-date="(.*?)" id="contribution-day-component')
     datacountreg = re.compile(r'<tool-tip .*?class="sr-only position-absolute">(.*?) contribution')
+    
     datadate = datadatereg.findall(data)
     datacount = datacountreg.findall(data)
     datacount = list(map(int, [0 if i == "No" else i for i in datacount]))
