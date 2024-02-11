@@ -1,6 +1,14 @@
-## 如果你想部署自用的vercel api
+# What's this?
 
-### ①注册
+此项目 fork 自 [python_github_calendar_api](https://github.com/Zfour/python_github_calendar_api) 仓库，原理通过 Python 获取 GitHub 的用户贡献信息，你可以部署到 Vercel 上作为 API 使用。
+
+如果你有 Hexo 博客，可以搭配使用 [hexo-github-calendar](https://github.com/Zfour/hexo-github-calendar) 插件在前端渲染贡献热力图。
+
+
+
+## 如何部署自用的 Vercel API
+
+### 1. 注册 Vercel
 
 首先前往 [Vercel 官网](https://vercel.com/)，点击右上角的 sign up 进行注册。
 
@@ -12,23 +20,24 @@
 
 这是由于 `Vercel` 不支持大部分国内邮箱。可以将 `github` 账号主邮箱改为 `Gmail` 邮箱。
 
-**但是**根据群友反应，将 `github` 账号主邮箱切换为 `Gmail` 以后，`Vercel` 又会提示需要使用手机号码验证。然而 `github` 并没有提供手机号码绑定的内容。
+但是根据群友反应，将 `github` 账号主邮箱切换为 `Gmail` 以后，`Vercel` 又会提示需要使用手机号码验证。然而 `github` 并没有提供手机号码绑定的内容。
 
 综上，建议一开始注册 `github` 账号时就使用 `Gmail` 等国外邮箱进行注册。
 
 1. 国内访问`Gmail`的方案：
 
-- - 直接使用 QQ 邮箱手机版，它提供 `Gmail` 的访问路线，可以直接注册并使用。
-  - 使用 `Ghelper` 等浏览器插件访问。详情可以参考这篇文章：[玩转 Microsoft-Edge](https://github.com/Zfour/python_github_calendar_api/blob/master/posts/8c8df126)
+   - 直接使用 QQ 邮箱手机版，它提供 `Gmail` 的访问路线，可以直接注册并使用。
 
-1. 若是执着于当前`Github`账号，可以参考以下方案进行尝试:
+   - 使用 `Ghelper` 等浏览器插件访问。详情可以参考这篇文章：[玩转 Microsoft-Edge](https://github.com/Zfour/python_github_calendar_api/blob/master/posts/8c8df126)
 
-- - 完成了 `Gmail` 等国外邮箱的注册，打开 [github-> 头像 ->settings->Emails](https://github.com/settings/emails)->Add email address, 并完成邮箱验证。
-  - 在Add email address 下方的Primary email address 选项中将 `Gmail` 设置为主邮箱。
+2. 若是执着于当前`Github`账号，可以参考以下方案进行尝试:
 
-### ②新建项目，fork我的项目
+   - 完成了 `Gmail` 等国外邮箱的注册，打开 [github-> 头像 ->settings->Emails](https://github.com/settings/emails)->Add email address, 并完成邮箱验证。
+   - 在Add email address 下方的Primary email address 选项中将 `Gmail` 设置为主邮箱。
 
-打开[dashboard](https://vercel.com/dashboard)点击新建项目的`New Project`按钮。点击导入第三方库。
+### 2. 新建项目，fork我的项目
+
+打开 [dashboard](https://vercel.com/dashboard) 点击新建项目的 `New Project` 按钮。点击导入第三方库。
 
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949541795-cfe67df4-a443-4604-86fd-a34ea9c34bed.png)
 
@@ -67,7 +76,7 @@ https://github.com/Zfour/friends_link_list_api
 
 此时点击Deploy，`Vercel` 的api部署已经完成。
 
-### ④检查API是否配置成功
+### 3. 检查API是否配置成功
 
 访问**API链接**（图中链接+'/api'+查询参数）,如我的为
 
