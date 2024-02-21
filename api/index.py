@@ -40,8 +40,10 @@ def getdata(name):
     return returndata
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        path = self.path
-        user = path.split('?')[1]
+        # 2024-02-21 固定用户名 https://github.com/Zfour/python_github_calendar_api/issues/20
+        # path = self.path
+        # user = path.split('?')[1]
+        user = 'Barry-Flynn'
         data = getdata(user)
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
