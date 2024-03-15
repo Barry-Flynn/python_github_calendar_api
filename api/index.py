@@ -40,10 +40,12 @@ def getdata(name):
     return returndata
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        # 2024-02-21 固定用户名 https://github.com/Zfour/python_github_calendar_api/issues/20
-        # path = self.path
-        # user = path.split('?')[1]
-        user = 'Barry-Flynn'
+        # 2024-03-15 规范接口的传参方式 https://github.com/Zfour/python_github_calendar_api/issues/20#issuecomment-1999115747
+        path = self.path
+        spl=path.split('?')[1:]
+        for kv in spl:
+            key,user=kv.split("=")
+            if key=="user": break
         data = getdata(user)
         self.send_response(200)
         self.send_header('Access-Control-Allow-Origin', '*')
