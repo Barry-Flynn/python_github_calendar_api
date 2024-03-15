@@ -2,7 +2,7 @@
 
 此项目 fork 自 [python_github_calendar_api](https://github.com/Zfour/python_github_calendar_api) 仓库，原理通过 Python 获取 GitHub 的用户贡献信息，你可以部署到 Vercel 上作为 API 使用。
 
-如果你有 Hexo 博客，可以搭配使用 [hexo-github-calendar](https://github.com/Zfour/hexo-github-calendar) 插件在前端渲染贡献热力图。
+如果你有 Hexo 博客，可以搭配使用 [Barry-Flynn/hexo-github-calendar](https://github.com/Barry-Flynn/hexo-github-calendar) 插件在前端渲染贡献热力图。
 
 
 
