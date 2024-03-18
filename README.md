@@ -1,9 +1,8 @@
 # What's this?
 
-此项目 fork 自 [python_github_calendar_api](https://github.com/Zfour/python_github_calendar_api) 仓库，原理通过 Python 获取 GitHub 的用户贡献信息，你可以部署到 Vercel 上作为 API 使用。
+此项目改造自 [python_github_calendar_api](https://github.com/Zfour/python_github_calendar_api) 仓库，原理通过 Python 获取 GitHub 的用户贡献信息，你可以部署到 Vercel 上作为 API 使用。调用方式为标准的 key-value 格式：`/api?user=Barry-Flynn`，推荐结合本文档自行部署，如果帮到你了，请给个免费的 star 鼓励支持一下我吧！
 
 如果你有 Hexo 博客，可以搭配使用 [Barry-Flynn/hexo-github-calendar](https://github.com/Barry-Flynn/hexo-github-calendar) 插件在前端渲染贡献热力图。
-
 
 
 ## 如何部署自用的 Vercel API
@@ -46,7 +45,7 @@
 填入俺提供的自建 API 项目地址:
 
 ```
-https://github.com/Zfour/friends_link_list_api
+https://github.com/Barry-Flynn/python_github_calendar_api
 ```
 
 
@@ -59,7 +58,7 @@ https://github.com/Zfour/friends_link_list_api
 
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949622863-54b72f81-9add-479d-94ed-aeb125099afe.png)
 
-选择github按钮然后会帮你将仓库克隆到你的github中，填入自定义仓库名称。
+选择github按钮然后会帮你将仓库克隆到你的github中，填入自定义仓库名称，如 `python_github_calendar_api`。
 
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/8391485/1612949755226-a97f3c75-8328-4630-91f2-2dd9dddf3665.png)
 
@@ -80,6 +79,6 @@ https://github.com/Zfour/friends_link_list_api
 
 访问**API链接**（图中链接+'/api'+查询参数）,如我的为
 
-https://python-github-calendar-api-zfour.vercel.app/api/?zfour
+https://python-github-calendar-api.vercel.app/api/?user=Barry-Flynn
 
 如果显示数据则说明API配置成功。
